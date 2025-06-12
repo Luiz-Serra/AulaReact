@@ -1,0 +1,14 @@
+.titulo
+{
+    color : purple;
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.destaque
+{
+    font-weight: bold;
+    font-style: italic;
+    color : teal;
+}
