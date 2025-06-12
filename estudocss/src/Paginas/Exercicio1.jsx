@@ -15,6 +15,7 @@ export default function Exercicio1()
               <p>This song (gnarly)</p>
               <p>Oh, my God, that new beat (gnarly) (fuckin' gnarly)</p>
               <p>Oh, my God, is this real? (Gnarly) (everything's gnarly)</p>
+              
         </div>
     );
 }
