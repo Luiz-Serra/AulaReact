@@ -1,60 +1,64 @@
-import {Link} from "react-router-dom";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import {useState} from "react"
+
 export default function Exemplo1() {
 
+  const[nome, setNome] = useState("Guilherme");
+  const[idade, setIdade] = useState(46);
+  const[resultado, setResultado] = useState(null);
 
+  function calcular() 
+  {
+      let dias = Number(idade) * 365;
 
-const [ nome, setNome ] = useState("Luiz");
-const [ idade, setIdade ] = useState(19);
-const [ resultado , setResultado] = useState(null);
+      setResultado("Olá " + nome + ", você já viveu  " + dias + " dias.");
+  }
 
-function calcular() {
-  let dias = Number(idade) * 365;
+  function limpar()
+  {
+    setNome("");
+    setIdade("");
+    setResultado("");
+  }
 
-  setResultado("Iae " + nome + ", você viveu " + dias + " dias.");
-}
-
-function limpar() {
-  setNome("");
-  setIdade("");
-  setResultado("");
-}
   return (
-      <div>
-       <h1>Exemplo 1</h1>
+    <div>
+      <h1>Exemplo 1</h1>
 
-       <div className="container">
-       <form>
-         <p>
-          Digite o nome do aluno <br />
-          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)}/>
-         </p>
+      <div className="container">
+        <form>
+          <p>
+            Digite o nome do aluno: <br />
+            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+          </p>
 
-         <p>
-          Digite a idade do aluno <br />
-          <input type="number" value={idade} onChange={(e) => setIdade(e.target.value)}/>
-         </p>
+          <p>
+            Digite a idade <br />
+            <input type="number" value={idade} onChange={(e) => setIdade(e.target.value)} />
+          </p>
 
-         <p>
-        <input type="button" value="Exemplo 1" onClick={calcular}/>
-        <input type="button" value="Limpar" onClick={limpar}/>
-         </p>
+          <p>
+            <input type="button" value="Exemplo 1" onClick={calcular} />
+            <input type="button" value="Limpar" onClick={limpar} />
+          </p>
 
-         <p>
+          <p>
+            <b>Resultado</b> <br />
 
-            <b>Resultados: </b> <br />
             Nome: {nome} <br />
             Idade: {idade}
-        </p>
+          </p>
+
+          <p>
+            {resultado}
+          </p>
+
+        </form>
 
         <p>
-          {resultado}
+          <Link to="/">Voltar</Link>
         </p>
-
-       </form>
-
-       <p></p>
-          </div>
-          </div>
-  );  
+      </div>
+    </div>
+  )
 }
